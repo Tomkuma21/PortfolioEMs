@@ -1,0 +1,496 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a { color: #00ffcc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    img { max-width: 100%; display: block; }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    /* Header / Hero */
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Pixel background animation */
+    @keyframes pixelBackground {
+      0%, 100% {
+        background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+      }
+      20% {
+        background-position: 3px 3px, 3px 3px, 15px 15px, -8px 8px, 8px -8px, -12px 12px, 5px 5px, -10px -10px, 12px 12px, -6px 6px;
+      }
+      40% {
+        background-position: -2px -2px, -2px -2px, -20px -20px, 12px -12px, -12px 12px, 15px -15px, -8px 8px, 18px 18px, -14px -14px, 9px -9px;
+      }
+      60% {
+        background-position: 1px -3px, 1px -3px, 8px 25px, -15px 15px, 15px 15px, -8px -8px, 12px -12px, -5px 5px, 20px 20px, -11px 11px;
+      }
+      80% {
+        background-position: -4px 4px, -4px 4px, 22px -22px, 6px -6px, -18px -18px, 10px 10px, -14px 14px, 8px -8px, -2px 2px, 16px -16px;
+      }
+    }
+
+    /* Pixel Art Elements */
+    .pixel {
+      position: absolute;
+      background: #00ffcc;
+      box-shadow:
+        0 0 8px rgba(0, 255, 204, 0.6),
+        0 0 16px rgba(0, 255, 204, 0.3);
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+      border-radius: 2px;
+      animation: pixelFloat1 8s ease-in-out infinite;
+    }
+
+    /* Random sizes using nth-child */
+    .pixel:nth-child(1) { width: 120px; height: 120px; top: 12%; left: 8%; }
+    .pixel:nth-child(2) { width: 180px; height: 180px; top: 35%; right: 12%; animation: pixelFloat2 6s ease-in-out infinite reverse; animation-delay: 1s; }
+    .pixel:nth-child(3) { width: 95px; height: 95px; top: 68%; left: 15%; animation: pixelFloat3 10s ease-in-out infinite; animation-delay: 2s; }
+    .pixel:nth-child(4) { width: 160px; height: 160px; top: 22%; right: 35%; animation-delay: 0.5s; }
+    .pixel:nth-child(5) { width: 140px; height: 140px; bottom: 28%; left: 28%; animation: pixelFloat2 7s ease-in-out infinite reverse; animation-delay: 3s; }
+    .pixel:nth-child(6) { width: 85px; height: 85px; bottom: 15%; right: 18%; animation: pixelFloat3 11s ease-in-out infinite; animation-delay: 1.5s; }
+    .pixel:nth-child(7) { width: 200px; height: 200px; top: 55%; left: 75%; animation-delay: 4s; }
+    .pixel:nth-child(8) { width: 110px; height: 110px; bottom: 45%; right: 8%; animation: pixelFloat2 8s ease-in-out infinite reverse; animation-delay: 2.5s; }
+    .pixel:nth-child(9) { width: 175px; height: 175px; top: 8%; right: 45%; animation: pixelFloat3 13s ease-in-out infinite; animation-delay: 5s; }
+    .pixel:nth-child(10) { width: 130px; height: 130px; bottom: 8%; left: 55%; animation: pixelFloat1 9s ease-in-out infinite reverse; animation-delay: 3.5s; }
+    .pixel:nth-child(11) { width: 90px; height: 90px; top: 75%; left: 35%; animation: pixelFloat2 11s ease-in-out infinite; animation-delay: 6s; }
+    .pixel:nth-child(12) { width: 155px; height: 155px; bottom: 62%; right: 55%; animation: pixelFloat3 10s ease-in-out infinite reverse; animation-delay: 4.5s; }
+
+    /* Pixel Art Animations */
+    @keyframes pixelFloat1 {
+      0%, 100% { 
+        transform: translateY(0px) translateX(0px); 
+        opacity: 0.7;
+      }
+      25% { 
+        transform: translateY(-30px) translateX(15px); 
+        opacity: 1;
+      }
+      50% { 
+        transform: translateY(-15px) translateX(-10px); 
+        opacity: 0.8;
+      }
+      75% { 
+        transform: translateY(-45px) translateX(20px); 
+        opacity: 0.9;
+      }
+    }
+
+    @keyframes pixelFloat2 {
+      0%, 100% { 
+        transform: translateY(0px) translateX(0px) rotate(0deg); 
+        opacity: 0.6;
+      }
+      33% { 
+        transform: translateY(-25px) translateX(-15px) rotate(90deg); 
+        opacity: 0.9;
+      }
+      66% { 
+        transform: translateY(-35px) translateX(25px) rotate(180deg); 
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes pixelFloat3 {
+      0%, 100% { 
+        transform: translateY(0px) translateX(0px) scale(1); 
+        opacity: 0.8;
+      }
+      50% { 
+        transform: translateY(-40px) translateX(10px) scale(1.2); 
+        opacity: 1;
+      }
+    }
+
+
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      text-shadow: 0 0 20px rgba(0, 255, 204, 0.5), 0 0 40px rgba(0, 255, 204, 0.3);
+      z-index: 10;
+      position: relative;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #e0e0e0;
+      text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+      z-index: 10;
+      position: relative;
+    }
+
+    header .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #00ffcc;
+      color: #121212;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+      z-index: 10;
+      position: relative;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+    }
+
+    header .btn:hover {
+      background-color: #00e6b8;
+    }
+
+    /* Floating Contact Buttons */
+    .floating-contact {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 24px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .contact-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .contact-btn::before {
+      content: attr(title);
+      position: absolute;
+      right: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .contact-btn:hover::before {
+      opacity: 1;
+      visibility: visible;
+      right: 75px;
+    }
+
+    .phone-btn {
+      background: linear-gradient(135deg, #00ffcc, #00e6b8);
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    .phone-btn:hover {
+      background: linear-gradient(135deg, #00e6b8, #00ccaa);
+      animation: none; /* Stop pulsing on hover */
+    }
+
+    .whatsapp-btn {
+      background: linear-gradient(135deg, #25d366, #128c7e);
+    }
+
+    .whatsapp-btn:hover {
+      background: linear-gradient(135deg, #128c7e, #075e54);
+    }
+
+    /* Pulse animation for phone button */
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 255, 204, 0.4);
+      }
+      50% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 0 8px rgba(0, 255, 204, 0);
+      }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .floating-contact {
+        bottom: 20px;
+        right: 20px;
+        gap: 10px;
+      }
+
+      .contact-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+
+      .contact-btn::before {
+        display: none; /* Hide tooltips on mobile */
+      }
+    }
+
+    /* Slider Section */
+    .slider-section {
+      padding: 5rem 0;
+      background-color: #1c1c1c;
+    }
+
+    .swiper-slide {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      font-size: 1.5rem;
+      background: #272727;
+      border-radius: 12px;
+      color: #00ffcc;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin: 0; /* Remove default Swiper margin */
+      padding: 1rem;
+    }
+
+    .swiper-slide i {
+      font-size: 3rem;
+      color: #00ffcc;
+      margin-bottom: 1rem;
+    }
+
+    .tech-logo {
+      width: 4rem;
+      height: 4rem;
+      margin-bottom: 1rem;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(0, 255, 204, 0.3));
+    }
+
+    .swiper-slide span {
+      text-align: center;
+    }
+
+    .swiper-slide:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 255, 204, 0.3);
+    }
+
+    /* Swiper Navigation Buttons */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #00ffcc;
+      background: rgba(0, 255, 204, 0.1);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin-top: -25px;
+      transition: all 0.3s ease;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background: rgba(0, 255, 204, 0.2);
+      transform: scale(1.1);
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    /* Swiper Pagination */
+    .swiper-pagination {
+      bottom: -40px;
+    }
+
+    .swiper-pagination-bullet {
+      background: #555;
+      opacity: 0.7;
+      width: 12px;
+      height: 12px;
+      margin: 0 4px;
+      transition: all 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #00ffcc;
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 5rem 0;
+    }
+
+    .projects h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background-color: #1f1f1f;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-card .project-info {
+      padding: 1rem;
+    }
+
+    .project-card .project-info h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    .project-card .project-info p {
+      color: #b0b0b0;
+      font-size: 0.95rem;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 5rem 0;
+      background-color: #1c1c1c;
+    }
+
+    .contact h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-message {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+
+    .form-message.success {
+      background-color: rgba(0, 255, 204, 0.1);
+      color: #00ffcc;
+      border: 1px solid rgba(0, 255, 204, 0.3);
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .form-message.error {
+      background-color: rgba(255, 100, 100, 0.1);
+      color: #ff6464;
+      border: 1px solid rgba(255, 100, 100, 0.3);
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: none;
+      background-color: #272727;
+      color: #e0e0e0;
+      font-size: 1rem;
+    }
+
+    .contact button {
+      padding: 0.75rem 1.5rem;
+      background-color: #00ffcc;
+      color: #121212;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .contact button:hover:not(:disabled) {
+      background-color: #00e6b8;
+    }
+
+    .contact button:disabled {
+      background-color: #555;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      background-color: #1f1f1f;
+      color: #888;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1rem; }
+    }

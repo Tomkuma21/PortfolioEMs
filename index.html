@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of TomKuma - Front-End Developer & Web Designer">
+  <title>TomKuma | Front-End Developer & Web Designer</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Swiper CSS for slider -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Hero -->
+  <header>
+    <div class="pixel pixel-1"></div>
+    <div class="pixel pixel-2"></div>
+    <div class="pixel pixel-3"></div>
+    <div class="pixel pixel-4"></div>
+    <div class="pixel pixel-5"></div>
+    <div class="pixel pixel-6"></div>
+    <div class="pixel pixel-7"></div>
+    <div class="pixel pixel-8"></div>
+    <div class="pixel pixel-9"></div>
+    <div class="pixel pixel-10"></div>
+    <div class="pixel pixel-11"></div>
+    <div class="pixel pixel-12"></div>
+    <h1>Tom Emmanuel Julian</h1>
+    <p>Front-End Developer & Web Designer</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </header>
+
+  <!-- Floating Contact Buttons -->
+  <div class="floating-contact">
+    <a href="tel:+1-234-567-8900" class="contact-btn phone-btn" title="Call Me Now" id="phoneBtn">
+      <i class="fas fa-phone"></i>
+    </a>
+    <a href="https://wa.me/1234567890" class="contact-btn whatsapp-btn" title="Message on WhatsApp" id="whatsappBtn">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Slider Section -->
+  <section class="slider-section container">
+    <h2 style="text-align:center; margin-bottom:2rem;">Featured Skills / Highlights</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://cdn.simpleicons.org/html5/white" alt="HTML5" class="tech-logo">
+          <span>HTML & CSS</span>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://cdn.simpleicons.org/javascript/white" alt="JavaScript" class="tech-logo">
+          <span>JavaScript / TypeScript</span>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://cdn.simpleicons.org/react/white" alt="React" class="tech-logo">
+          <span>React & Tailwind</span>
+        </div>
+        <div class="swiper-slide">
+          <img src="https://cdn.simpleicons.org/figma/white" alt="Figma" class="tech-logo">
+          <span>UI / UX Design</span>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects container">
+    <h2>My Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Project 1">
+        <div class="project-info">
+          <h3>Project One</h3>
+          <p>React App | TailwindCSS | Responsive Design</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Project 2">
+        <div class="project-info">
+          <h3>Project Two</h3>
+          <p>Vanilla JS | HTML5 | CSS3</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Project 3">
+        <div class="project-info">
+          <h3>Project Three</h3>
+          <p>React | API Integration | UI/UX</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact container">
+    <h2>Contact Me</h2>
+    <form id="contactForm" action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name/Position/Company" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" id="submitBtn">Send Message</button>
+      <div id="formMessage" class="form-message"></div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 Tom Emmanuel Julian. All Rights Reserved.
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="js.js"></script>
+
+</body>
+</html>
